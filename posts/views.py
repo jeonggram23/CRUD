@@ -13,7 +13,7 @@ def index(request):
     return render(request, 'index.html', context)
 
 
-# post = Post.objects.get(id=id)의 첫번째 아이디는 
+# post = Post.objects.get(id=id)의 첫번째 아이디는 Post의 id임
 def detail(request, id):
     post = Post.objects.get(id=id)
 
@@ -65,7 +65,7 @@ def update(request, id):
     content = request.GET.get('content')
     
     #post = Post() => 새로운 게시물을 만들 때
-    # 기존 데이터
+    # 기존 데이터 / 여기가 create와 다른 부분
     post = Post.objects.get(id=id)
 
     post.title = title
