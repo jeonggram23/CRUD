@@ -12,3 +12,13 @@ def index(request):
 
     return render(request, 'index.html', context)
 
+
+# post = Post.objects.get(id=id)의 첫번째 아이디는 
+def detail(request, id):
+    post = Post.objects.get(id=id)
+
+    context = {
+        'post' : post,
+    }
+
+    return render(request, 'detail.html', context)
